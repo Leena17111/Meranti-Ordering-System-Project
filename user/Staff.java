@@ -1,16 +1,16 @@
-public class Student extends User {
+package user;
+public class Staff extends User {
     //Attributes
-    private int meritPoints;
+    private String staffPosition;
 
     //Constructor
-    public Student(String id, String name, String email, String phone, String pwd, int points) {
+    public Staff(String id, String name, String email, String phone, String pwd, String position) {
         super(id, name, email, phone, pwd);
-        this.meritPoints = points;
+        this.staffPosition = position;
     }
 
     //Accessors(getter methods)
-    public int getMeritPoints() { return meritPoints; }
-    public void setMeritPoints(int points) { this.meritPoints = points; }
+    public String getStaffPosition() { return staffPosition; }
 
     //Override method to display staff-specific user details
     @Override
@@ -19,6 +19,6 @@ public class Student extends User {
         System.out.println("Name: " + getUserName());
         System.out.println("Email: " + getUserEmail());
         System.out.println("Phone: " + getUserNumber());
-        System.out.println("Merit Points: " + meritPoints);
+        System.out.println("Staff Position: " + getStaffPosition());
     }
 }

@@ -1,3 +1,4 @@
+package payment;
 import java.util.Scanner;
 
 public class CardPayment extends Payment implements Payable {

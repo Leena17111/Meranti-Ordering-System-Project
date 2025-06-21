@@ -1,3 +1,7 @@
+package vendor;
+import menu.*;
+
+
 public class Vendor {
     private int vendorID;
     private String vendorName;

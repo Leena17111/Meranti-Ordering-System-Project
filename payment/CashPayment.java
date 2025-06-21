@@ -1,3 +1,6 @@
+package payment;
+
+
 public class CashPayment extends Payment implements Payable {
     // Constructor
     public CashPayment(Payment payment) {

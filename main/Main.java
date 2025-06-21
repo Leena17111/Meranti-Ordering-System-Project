@@ -1,3 +1,12 @@
+package main;
+
+import user.*;
+import vendor.*;
+import menu.*;
+import order.*;
+import payment.*;
+import delivery.*;
+
 import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
 import javax.swing.JOptionPane;

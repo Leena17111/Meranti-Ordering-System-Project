@@ -1,3 +1,6 @@
+package menu;
+import vendor.CuisineType;
+
 public class Menu {
     //Attributes
     private String[] items;

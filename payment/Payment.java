@@ -1,3 +1,9 @@
+package payment;
+
+import delivery.*;
+import user.Student;
+
+
 public class Payment {
     private double totalAmount;
     private String paymentStatus;
@@ -72,7 +78,7 @@ public class Payment {
         }
 
         totalAmount = finalAmount;
-        System.out.println("Final Total Amount: RM " + finalAmount);
+        System.out.printf("Final Total Amount: RM %.2f%n", finalAmount); // fixed decimal format
         return finalAmount;
     }
 
