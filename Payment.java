@@ -1,49 +1,40 @@
-
 public class Payment {
-
-    //Attributes
     private double totalAmount;
-    public String paymentStatus;
-    private String cardNumber;
-    private Student student; // Association
-    private Delivery delivery; // Association
+    private String paymentStatus;
+    private String cardNumber; // ⚠️ Note: In real apps, avoid storing raw card numbers unencrypted
+    private Student student;
+    private Delivery delivery;
 
-    // Default constructor
     public Payment() {
         this.totalAmount = 0.0;
         this.paymentStatus = "Pending";
     }
 
-    //Parameterized constructor
     public Payment(double amount) {
         this.totalAmount = amount;
         this.paymentStatus = "Pending";
     }
 
-    //Parameterized constructor
     public Payment(double amount, Student student, Delivery delivery) {
         this.totalAmount = amount;
         this.paymentStatus = "Pending";
-        this.cardNumber = "";
         this.student = student;
         this.delivery = delivery;
+        this.cardNumber = ""; // Optional privacy: don't persist full number
     }
 
-    // Accessors (Getter methods)
     public double getTotalAmount() { return totalAmount; }
     public String getCardNumber() { return cardNumber; }
-    public String getPaymentStatus(){return paymentStatus; }
+    public String getPaymentStatus() { return paymentStatus; }
     public Student getStudent() { return student; }
     public Delivery getDelivery() { return delivery; }
 
-    // Mutators (Setter methods)
     public void setTotalAmount(double amount) { this.totalAmount = amount; }
     public void setPaymentStatus(String status) { this.paymentStatus = status; }
     public void setCardNumber(String card) { this.cardNumber = card; }
     public void setStudent(Student student) { this.student = student; }
     public void setDelivery(Delivery delivery) { this.delivery = delivery; }
 
-    // Calculate final amount to be paid if discount is applicable
     public double calculateFinalAmount(double amount) {
         double discount = 0.0;
 
@@ -64,7 +55,6 @@ public class Payment {
             }
         }
 
-        //deduct discount from final amount
         double finalAmount = amount - discount;
 
         if (discount > 0.0) {
@@ -85,12 +75,11 @@ public class Payment {
         System.out.println("Final Total Amount: RM " + finalAmount);
         return finalAmount;
     }
-    
-    //Display all payment details
+
     public void displayPaymentDetails() {
         System.out.println("\n--- Payment Details ---");
-        System.out.println("Total Amount: RM " + totalAmount);
-        System.out.println("Payment Status: " + paymentStatus);
+        System.out.println("Total Amount   : RM " + totalAmount);
+        System.out.println("Payment Status : " + paymentStatus);
         System.out.println();
     }
 }

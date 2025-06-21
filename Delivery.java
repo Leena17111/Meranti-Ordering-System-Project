@@ -11,22 +11,20 @@ public class Delivery {
     private ArrayList<String> locations;
     private ArrayList<Integer> distances;
 
-    // Static default locations and distances (shared by all Delivery objects)
     public static ArrayList<String> getDefaultLocations() {
-    return new ArrayList<>(List.of(
-        "Faculty of Computing",
-        "Faculty of Electrical",
-        "KLG Residence",
-        "Library",
-        "UTMSPACE"
-    ));
-}
+        return new ArrayList<>(List.of(
+            "Faculty of Computing",
+            "Faculty of Electrical",
+            "KLG Residence",
+            "Library",
+            "UTMSPACE"
+        ));
+    }
 
-public static ArrayList<Integer> getDefaultDistances() {
-    return new ArrayList<>(List.of(1, 2, 10, 2, 9));
-}
+    public static ArrayList<Integer> getDefaultDistances() {
+        return new ArrayList<>(List.of(1, 2, 10, 2, 9));
+    }
 
-    // Constructor
     public Delivery() {
         this.deliveryStatus = "Pending";
         this.estimatedTime = 0;
@@ -34,27 +32,28 @@ public static ArrayList<Integer> getDefaultDistances() {
         this.distances = new ArrayList<>();
     }
 
-    // Getters
     public int getDeliveryID() { return deliveryID; }
     public double getDeliveryFee() { return deliveryFee; }
     public String getDeliveryAddress() { return deliveryAddress; }
     public String getDeliveryStatus() { return deliveryStatus; }
     public int getEstimatedTime() { return estimatedTime; }
 
-    // Setters
     public void setDeliveryID(int id) { this.deliveryID = id; }
     public void setDeliveryFee(double fee) { this.deliveryFee = fee; }
     public void setDeliveryAddress(String address) { this.deliveryAddress = address; }
-    public void setDliveryStatus(String status) { this.deliveryStatus = status; }
+
+    // ✅ Fixed Typo: Method renamed from setDliveryStatus to setDeliveryStatus
+    public void setDeliveryStatus(String status) { this.deliveryStatus = status; }
+
     public void setEstimatedTime(int time) { this.estimatedTime = time; }
 
-    public boolean selectDeliveryAddress() {
+    // ✅ FIXED: Now uses scanner passed from Main (no resource leak)
+    public boolean selectDeliveryAddress(Scanner scanner) {
         if (locations.isEmpty() || distances.isEmpty()) {
             locations = getDefaultLocations();
             distances = getDefaultDistances();
         }
 
-        Scanner scanner = new Scanner(System.in);
         System.out.println("\n--- Select Delivery Location ---");
         for (int i = 0; i < locations.size(); i++) {
             System.out.println((i + 1) + ". " + locations.get(i));

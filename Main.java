@@ -131,7 +131,8 @@ public class Main {
             Delivery delivery = null;
             if (deliveryOpt == 'y' || deliveryOpt == 'Y') {
                 delivery = new Delivery();
-                if (delivery.selectDeliveryAddress()) {
+                if (delivery.selectDeliveryAddress(sc)) {
+
                     order.setDelivery(delivery);
                 }
             }
