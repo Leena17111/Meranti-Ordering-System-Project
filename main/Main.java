@@ -1,3 +1,12 @@
+package main;
+
+import user.*;
+import vendor.*;
+import menu.*;
+import order.*;
+import payment.*;
+import delivery.*;
+
 import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
 import javax.swing.JOptionPane;
@@ -131,7 +140,8 @@ public class Main {
             Delivery delivery = null;
             if (deliveryOpt == 'y' || deliveryOpt == 'Y') {
                 delivery = new Delivery();
-                if (delivery.selectDeliveryAddress()) {
+                if (delivery.selectDeliveryAddress(sc)) {
+
                     order.setDelivery(delivery);
                 }
             }

@@ -1,3 +1,4 @@
+package vendor;
 // constant vendor's cuisine types
 public enum CuisineType {
     MALAYSIAN("Local Malaysian food"),
