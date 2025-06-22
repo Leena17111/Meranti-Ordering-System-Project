@@ -1,0 +1,14 @@
+========== ORDER SUMMARY ==========
+Order ID: 6160
+Vendor: RICHIAMO COFFEE
+-----------------------------------
+1. Americano x1 - RM 5.99
+-----------------------------------
+Total Amount: RM 5.99
+Payment Status: Pending
+--- Delivery Details ---
+Address: greenfield
+Estimated Time: 30 minutes
+Delivery Fee: RM 5.0
+Status: Pending
+===================================
